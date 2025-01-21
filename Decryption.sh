@@ -33,7 +33,6 @@ decrypt_file() {
         -in "$input" \
         -out "$output" \
         -pass pass:"$password" \
-        -iter 1000 \
         -pbkdf2; then
         echo "Decrypted $input with $cipher"
         echo "Output saved to $output"

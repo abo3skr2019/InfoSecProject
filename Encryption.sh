@@ -34,7 +34,6 @@ encrypt_file() {
         -in "$input_file" \
         -out "$output" \
         -pass pass:"$password" \
-        -iter 1000 \
         -pbkdf2; then
         echo "Encrypted with $cipher"
         cat "$output"

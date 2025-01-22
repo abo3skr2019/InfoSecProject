@@ -56,7 +56,7 @@ encrypt_file "aes-128-cbc" "cipher-Aes128-CBC.bin"
 
 echo "AES 128 Encryption Over"
 
-# Blowfish Encryption (using correct cipher names)
+# Blowfish Encryption
 echo "BlowFish Encryption Started"
 
 encrypt_file "bf-cfb" "cipher-BlowFish-CFB.bin"

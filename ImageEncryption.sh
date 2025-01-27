@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Encryption
 openssl enc -aes-128-cbc -in pic_original.bmp -out pic_cbc.bmp -pass pass:"password" -pbkdf2
 

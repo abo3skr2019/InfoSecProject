@@ -4,7 +4,6 @@ import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 class NoKeyFoundException extends Exception {
     public NoKeyFoundException(String message) {
@@ -28,7 +27,7 @@ public static void main(String[] args) throws Exception {
         try {
             String paddedKey = padKey(word);
             byte[] decrypted = decrypt(ciphertext, paddedKey, iv);
-            if (new String(decrypted).equals(PLAINTEXT)&& false) {
+            if (new String(decrypted).equals(PLAINTEXT)) {
                 System.out.println("Found key with padding: " + paddedKey);
                 System.out.println("key word: " + word);
                 return; // Now we can break the loop

@@ -5,8 +5,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.Base64;
 
+class NoKeyFoundException extends Exception {
+    public NoKeyFoundException(String message) {
+        super(message);
+    }
+}
 public class Task7 {
     private static final String PLAINTEXT = "This is a top secret.";
     private static final String CIPHERTEXT_HEX = 
@@ -14,23 +18,32 @@ public class Task7 {
     private static final String IV_HEX = 
         "aabbccddeeff00998877665544332211";
 
-    public static void main(String[] args) throws Exception {
-        byte[] ciphertext = hexToBytes(CIPHERTEXT_HEX.replaceAll("\\s+", ""));
-        byte[] iv = hexToBytes(IV_HEX.replaceAll("\\s+", ""));
-        
-        Files.lines(Paths.get("words.txt"))
-            .filter(word -> word.length() < 16)
-            .forEach(word -> {
-                try {
-                    String paddedKey = padKey(word);
-                    byte[] decrypted = decrypt(ciphertext, paddedKey, iv);
-                    if (new String(decrypted).equals(PLAINTEXT)) {
-                        System.out.println("Found key: " + word);
-                    }
-                } catch (Exception e) {
-                }
-            });
+public static void main(String[] args) throws Exception {
+    byte[] ciphertext = hexToBytes(CIPHERTEXT_HEX.replaceAll("\\s+", ""));
+    byte[] iv = hexToBytes(IV_HEX.replaceAll("\\s+", ""));
+
+    
+    for (String word : Files.readAllLines(Paths.get("words.txt"))) {
+        if (word.length() >= 16) continue;
+        try {
+            String paddedKey = padKey(word);
+            byte[] decrypted = decrypt(ciphertext, paddedKey, iv);
+            if (new String(decrypted).equals(PLAINTEXT)&& false) {
+                System.out.println("Found key with padding: " + paddedKey);
+                System.out.println("key word: " + word);
+                return; // Now we can break the loop
+            }
+        } catch (javax.crypto.BadPaddingException e)
+        {
+            // Wrong key - silently continue
+            continue;
+        }
+        catch (Exception e) {
+            System.err.println("Unexpected error: " + e.getMessage());
+        }
     }
+    throw new NoKeyFoundException("Key not Found in Word list");
+}
 
     private static String padKey(String key) {
         StringBuilder paddedKey = new StringBuilder(key);
@@ -40,7 +53,8 @@ public class Task7 {
         return paddedKey.toString();
     }
 
-    private static byte[] decrypt(byte[] ciphertext, String key, byte[] iv) throws Exception {
+    private static byte[] decrypt(byte[] ciphertext, String key, byte[] iv) throws Exception 
+    {
         SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(StandardCharsets.UTF_8), "AES");
         IvParameterSpec ivSpec = new IvParameterSpec(iv);
         

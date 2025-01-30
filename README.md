@@ -1,15 +1,20 @@
 # InfoSec Project
 
 ## Task 2
+
 Inputs :
+
 ```sh
 password="password"
 input_file="plaintext.txt"
 ```
+
 ### AES-128
 
 #### Encryption
+
 This is the Simple option using openssl directly in the script
+
 ```sh
 echo "AES 128 Encryption Started"
 
@@ -24,7 +29,9 @@ cat "cipher-Aes128-CBC.bin"
 echo ""
 echo "AES 128 Encryption Over"
 ```
+
 This is the Programatic Option using loops
+
 ```sh
 
 if [ ! -f "$input_file" ]; then
@@ -79,7 +86,9 @@ encrypt_file "aes-128-cbc" "cipher-Aes128-CBC.bin"
 echo "AES 128 Encryption Over"
 
 ```
+
 #### Decryption
+
 ```sh
 # AES-128 Decryption
 echo "AES 128 Decryption Started"
@@ -100,6 +109,7 @@ echo "AES 128 Decryption Over"
 ```
 
 This is the Programatic Option using loops
+
 ```sh
 
 needs_legacy_provider() {
@@ -159,7 +169,9 @@ echo "AES 128 Decryption Over"
 ### Blowfish
 
 #### Encryption
+
 This is the Simple option using openssl directly in the script
+
 ```sh
 # Blowfish Encryption
 echo "BlowFish Encryption Started"
@@ -176,7 +188,9 @@ cat "cipher-BlowFish-CBC.bin"
 echo ""
 echo "BlowFish Encryption Over"
 ```
+
 This is the Programatic Option using loops it is done on the same file as the AES one so i'll just put the function calls 
+
 ```sh
 echo "BlowFish Encryption Started"
 
@@ -206,6 +220,7 @@ echo "BlowFish Decryption Over"
 ```
 
 This is the Programatic Option using loops but same as above i'll just place the function calls
+
 ```sh
 # Blowfish Decryption
 echo "BlowFish Decryption Started"
@@ -252,7 +267,9 @@ rm cbcbody
 ```
 
 ### Input / Output
+
 #### Given Picture
+
 Here is the Input Picture
 
 ![Original Picture](pic_original.bmp)

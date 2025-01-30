@@ -1,5 +1,5 @@
 #!/bin/bash
-picture="PROJECTWALLPAPER.bmp"
+picture="pic_original.bmp"
 
 # Encryption
 openssl enc -aes-128-cbc -in $picture -out pic_cbc.bmp -pass pass:"password" -pbkdf2

@@ -251,8 +251,11 @@ rm cbcbody
 ### Input / Output
 #### Given Picture
 Here is the Input Picture
+
 ![Original Picture](pic_original.bmp)
+
 and here is the output :
+
 ![ECB Encrypted](pic_ecb.bmp)
 
 ![CBC Encrypted](pic_cbc.bmp)
@@ -264,6 +267,10 @@ this is the converted file
 ![Converted Wallpaper](PROJECTWALLPAPER.bmp)
 
 This is the Output after Encryption
+
+![ECB Wallpaper](ECBPROJECTWALLPAPER.bmp)
+
+![CBC Wallpaper](CBCPROJECTWALLPAPER.bmp)
 
 
 

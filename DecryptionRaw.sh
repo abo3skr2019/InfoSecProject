@@ -27,9 +27,15 @@ echo "BlowFish Decryption Started"
 
 openssl enc -d -bf-cfb -provider legacy -provider default -in "cipher-BlowFish-CFB.bin" -out "cipher-BlowFish-CFB_decrypted.txt" -pass pass:"$password" -pbkdf2
 cat "cipher-BlowFish-CFB_decrypted.txt"
+echo ""
+
 openssl enc -d -bf-ofb -provider legacy -provider default -in "cipher-BlowFish-OFB.bin" -out "cipher-BlowFish-OFB_decrypted.txt" -pass pass:"$password" -pbkdf2
 cat "cipher-BlowFish-OFB_decrypted.txt"
+echo ""
+
 openssl enc -d -bf-cbc -provider legacy -provider default -in "cipher-BlowFish-CBC.bin" -out "cipher-BlowFish-CBC_decrypted.txt" -pass pass:"$password" -pbkdf2
+echo ""
+
 cat "cipher-BlowFish-CBC_decrypted.txt"
 echo ""
 echo "BlowFish Decryption Over"

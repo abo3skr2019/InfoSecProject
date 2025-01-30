@@ -1,8 +1,5 @@
 # InfoSec Project
 
-Abdulaziz Fahad Askar
-Section 173
-
 ## Task 2
 Inputs :
 ```sh

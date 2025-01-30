@@ -15,9 +15,9 @@ tail -c +55 pic_ecb.bmp > ecbbody
 tail -c +55 pic_cbc.bmp > cbcbody
 
 # Appended the encrypted image data to the valid header
-cat imgheader ecbbody > pic_ecb.bmp
+cat imgheader ecbbody > ECB$picture
 
-cat imgheader cbcbody > pic_cbc.bmp
+cat imgheader cbcbody > CBC$picture
 # Cleaning 
 rm imgheader 
 

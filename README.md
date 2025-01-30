@@ -222,6 +222,9 @@ echo "BlowFish Decryption Over"
 ### Bash Script
 
 ```sh
+#!/bin/bash
+picture=""
+
 # Encryption
 openssl enc -aes-128-cbc -in $picture -out pic_cbc.bmp -pass pass:"password" -pbkdf2
 
@@ -236,9 +239,9 @@ tail -c +55 pic_ecb.bmp > ecbbody
 tail -c +55 pic_cbc.bmp > cbcbody
 
 # Appended the encrypted image data to the valid header
-cat imgheader ecbbody > pic_ecb.bmp
+cat imgheader ecbbody > ECB$picture
 
-cat imgheader cbcbody > pic_cbc.bmp
+cat imgheader cbcbody > CBC$picture
 # Cleaning 
 rm imgheader 
 
@@ -256,34 +259,33 @@ Here is the Input Picture
 
 and here is the output :
 
-![ECB Encrypted](pic_ecb.bmp)
+![ECB Encrypted](ECBpic_original.bmp)
 
-![CBC Encrypted](pic_cbc.bmp)
+![CBC Encrypted](CBCpic_original.bmp)
 
 #### Custom Picture
-![Wallpaper](PROJECTWALLPAPER.png)
-I needed to Convert to a bmp file since pngs and bmps have different header sizes which would make the script more complex so i elected to convert the file instead 
-this is the converted file 
-![Converted Wallpaper](PROJECTWALLPAPER.bmp)
+
+![Custom Picture of Github](newpic.bmp)
 
 This is the Output after Encryption
 
-![ECB Wallpaper](ECBPROJECTWALLPAPER.bmp)
+![ECB Wallpaper](ECBnewpic.bmp)
 
-![CBC Wallpaper](CBCPROJECTWALLPAPER.bmp)
+![CBC Wallpaper](CBCnewpic.bmp)
 
 
 
 ### Summary
-As you can See the ECB Picture still shows the Outline some would say the general feeling of the picture but CBC completly Garbles how it looks such that you can't deduce the original picture shape from it
 
+As you can See the ECB Picture still shows the Outline some would say the general feeling of the picture but CBC completly Garbles how it looks such that you can't deduce the original picture shape from it
 so in summary CBC is better for encrypting the image for secrecy
 
 
 ## Challenges Faced
 ### Installing the Correct Openjdk 
 
-I only Had the JRE OpenJDK package not the devel version which required me to google as to why javac was not found here is the error 
+I only Had the JRE OpenJDK package not the devel version which required me to google as to why javac was not found here is the error so in summary CBC is better for encrypting the image for secrecy
+
 ```sh
 bash: javac: command not found...
 Similar command is: 'java'    

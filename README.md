@@ -373,7 +373,9 @@ public static void main(String[] args) throws Exception {
 ```
 I Experimented with various padding schemes and found that only PKCS5Padding and ISO10126Padding worked but i decided on using PKCS5Padding after some research gleamed that ISO10126Padding is considered deprecated 
 Any Issues Faced in any of the Tasks are Under the Challenges Faced Header
+
 ## Challenges Faced
+
 ### Installing the Correct Openjdk 
 
 I only Had the JRE OpenJDK package not the devel version which required me to google as to why javac was not found here is the error so in summary CBC is better for encrypting the image for secrecy
@@ -382,7 +384,9 @@ I only Had the JRE OpenJDK package not the devel version which required me to go
 bash: javac: command not found...
 Similar command is: 'java'    
 ```
+
 ### Virtual Box Wasn't Available in the Package manager 
+
 Virtual Box wasn't available to install in my package manager so i had to use my baremetal machine to conduct the project
 
 ### Forgetting the Echo

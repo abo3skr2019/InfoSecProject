@@ -2,7 +2,6 @@
 
 # Configuration
 password="password"
-iter_count="1000"
 
 echo "Begin Decryption"
 

@@ -3,7 +3,6 @@
 # Configuration
 password="password"
 input_file="plaintext.txt"
-iter_count="1000"
 
 # Check input file
 if [ ! -f "$input_file" ]; then

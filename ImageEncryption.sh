@@ -1,12 +1,13 @@
 #!/bin/bash
+picture="PROJECTWALLPAPER.bmp"
 
 # Encryption
-openssl enc -aes-128-cbc -in pic_original.bmp -out pic_cbc.bmp -pass pass:"password" -pbkdf2
+openssl enc -aes-128-cbc -in $picture -out pic_cbc.bmp -pass pass:"password" -pbkdf2
 
-openssl enc -aes-128-ecb -in pic_original.bmp -out pic_ecb.bmp -pass pass:"password" -pbkdf2
+openssl enc -aes-128-ecb -in $picture -out pic_ecb.bmp -pass pass:"password" -pbkdf2
 
 # Valid image header
-head -c 54 pic_original.bmp > imgheader
+head -c 54 $picture > imgheader
 
 # removed invalid Image header
 tail -c +55 pic_ecb.bmp > ecbbody

@@ -391,7 +391,7 @@ Virtual Box wasn't available to install in my package manager so i had to use my
 
 ### Forgetting the Echo
 
-Since sometimes the Encryption uses the newline character i had to include the Echo new line to make it so that when the encryption is catted they don't appear on top of one another 
+Since sometimes the Encryption output uses the newline character i had to include the Echo new line to make it so that when the encryption is catted they don't appear on top of one another 
 
 ### incredibly verbose erroring in the terminal
 
@@ -402,7 +402,8 @@ it was because i didn't place the Encryption code in a try catch with the except
 
 If they Key wasn't found the Program Will just error and not tell me it had ended so to solve that i made a new class which is a custom exception called `NoKeyFoundException`
 
-
+### Depcrecation of Blowfish
+Blowfish Was Concidered Deprecated Which Caused a lot of issues as i couldn't figure out why my script wasn't working with blowfish when it worked with AES and after doing some research i found out that blowfish was concidered legacy so i had to use the legacy provide
 
 ## The Code
 The Code and the Script are in this Github [repo](https://github.com/abo3skr2019/InfoSecProject)

@@ -1,5 +1,6 @@
 # InfoSec Project
 
+
 ## Task 2
 
 Inputs :
@@ -293,13 +294,14 @@ CBC:
 ![Custom Picture of Github](newpic.bmp)
 
 This is the Output after Encryption
-ECB:
-
-![ECB Wallpaper](ECBnewpic.bmp)
 
 CBC:
 
-![CBC Wallpaper](CBCnewpic.bmp)
+![CBC Encrypted Picture](CBCnewpic.bmp)
+ECB:
+
+![ECB Picture](ECBnewpic.bmp)
+
 
 
 
@@ -429,7 +431,4 @@ Blowfish Was Concidered Deprecated Which Caused a lot of issues as i couldn't fi
 
 ## The Code
 The Code and the Script are in this Github [repo](https://github.com/abo3skr2019/InfoSecProject)
-
-
-
 
